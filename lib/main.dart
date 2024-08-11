@@ -21,15 +21,62 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Firebase App',
+      title: 'Live Score App',
       debugShowCheckedModeBanner: false,
-      darkTheme: ThemeData.dark(),
+      theme: ThemeData(
+        useMaterial3: false,
+        brightness: Brightness.light,
+        //primaryColorDark: Colors.red,
+        primarySwatch: Colors.orange,
+      ),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Firebase Integration'),
+          title: const Text('Live Score'),
         ),
-        body: const Center(
-          child: Text('Firebase is integrated!'),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(height: 24),
+            Text(
+              'Match Name',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            const SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  children: [
+                    Text(
+                      '10',
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                    Text(
+                      'Team Name',
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                  ],
+                ),
+                const Text('VS'),
+                Column(
+                  children: [
+                    Text(
+                      '10',
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                    Text(
+                      'Team Name',
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                  ],
+                ),
+              ],
+            )
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.add),
         ),
       ),
     );
