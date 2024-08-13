@@ -3,6 +3,7 @@ plugins {
     id "kotlin-android"
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -24,8 +25,9 @@ android {
         applicationId = "com.sultan.firebase_intro_basic"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
+        minSdk 21
+        //noinspection OldTargetApi
+        targetSdk 33
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
@@ -56,5 +58,3 @@ dependencies {
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
 }
-
-apply plugin: 'com.google.gms.google-services'
