@@ -146,8 +146,6 @@ class _HomeScreenState extends State<HomeScreen> {
         stream: firebaseFirestore
             .collection('football')
             .doc('1_ban_vs_ind')
-            // .collection('abc')
-            // .doc('abed')
             .snapshots(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
